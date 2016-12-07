@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h1> Game Cards </h1>
+    <div class="gamecards">
+        <ul>
+            <li  color="primary"><img *ngIf="cardsInfo" src="{{cardsInfo.image}}"></li>
+            <li ><img *ngIf="dealarCardInfo" src="{{dealarCardInfo.image}}"></li>
+             <li ><img *ngIf="!dealarCardInfo && cardsInfo" src="../assets/dealercard.jpg" style="width:226px;height:314px"></li>
+        </ul>
+    </div>
+    <div class="ansbtns">
+        <button *ngIf="!gameresult && cardsInfo" md-raised-button class="material-cust-medium-button" color="primary" (click)="showAnswer(1)">Higher</button>
+        <button *ngIf="!gameresult && cardsInfo" md-raised-button class="material-cust-medium-button" color="primary" (click)="showAnswer(0)">Lower</button>
+    </div>
+    <div><h1 *ngIf="gameresult"> {{gameresult.result}}</h1></div>
+     <button *ngIf="gameresult" md-raised-button class="material-cust-medium-button" color="primary" (click)="restartGame()">TryAgain</button>
+</div>

@@ -1,0 +1,14 @@
+<div class="moviegallery">
+         
+     <md-grid-list cols="6" rowHeight="230px">
+         
+    <md-grid-tile *ngFor="let item of itemsInfo" [style.background]="'lightblue'">
+          <a href="{{pageUrl(item.id,item.name)}}" target="_blank"><img src="{{imgPth}}{{item.profile_path}}"></a>
+             <md-grid-tile-footer >
+                 <h3> {{item.name}}</h3>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+        
+    </md-grid-list>
+
+</div>
